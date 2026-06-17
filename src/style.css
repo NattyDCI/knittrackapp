@@ -1,0 +1,361 @@
+@font-face {
+  font-family: "Orbitron";
+  src: url("./assets/fonts/Orbitron-Regular.ttf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Manrope";
+  src: url("./assets/fonts/Manrope-Bold.ttf");
+  font-weight: 800;
+}
+@font-face {
+  font-family: "Manrope";
+  src: url("./assets/fonts/Manrope-Light.ttf");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Manrope";
+  src: url("./assets/fonts/Manrope-Medium.ttf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Manrope";
+  src: url("./assets/fonts/Manrope-Regular.ttf");
+  font-weight: 500;
+}
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+body {
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+  font-family: system-ui, sans-serif;
+  background: #f7efe7;
+  color: #1f1f1f;
+}
+
+#app {
+  max-width: 430px;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding-top: 40px;
+  padding-inline: 20px;
+  box-sizing: border-box;
+}
+
+.screen.active {
+  display: block;
+  min-height: 100vh;
+  overflow-y: auto;
+}
+
+#app {
+  max-width: 430px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.screen {
+  display: none;
+}
+
+.screen.active {
+  display: block;
+  overflow-y: auto;
+}
+
+h1 {
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  margin-top: 0;
+  opacity: 0.7;
+  font-family: "Manrope";
+  font-weight: 800;
+}
+
+.main-btn,
+button {
+  border: none;
+  border-radius: 10px;
+  padding: 10px 14px;
+  background: #705d5d;
+  color: white;
+  font-weight: 600;
+  font-family: "Manrope";
+}
+
+.back-btn-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  
+  
+}
+
+.back-btn {
+  background: transparent;
+  color: #222;
+  margin-top: 30px;
+  font-size:30px;
+  cursor: pointer;
+  
+}
+
+input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  margin-bottom: 12px;
+}
+
+#projectsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin: 24px 0;
+}
+
+.project-card {
+  position: relative;
+  background-color: grey;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: "Manrope";
+  font-weight: 300;
+}
+
+.card-content {
+  font-family: "Manrope";
+  font-weight: 400;
+  .project-name {
+    color: rgb(0, 0, 0);
+    font-weight: 400;
+    margin-top: 10px;
+    font-weight: 800;
+  }
+  .stats-line {
+    display: flex;
+    align-content: center;
+    margin-top: 10px;
+    height: fit-content;
+    align-items: center;
+    justify-content: space-between;
+
+    .status-title {
+      color: rgb(30, 30, 30);
+      margin: 0;
+    }
+    .progress-pill {
+      margin: 0;
+      background-color: #705d5d;
+      color: white;
+      width: 50px;
+      height: 30px;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      border-radius: 30px;
+      font-weight: 800;
+    }
+  }
+}
+
+.delete-project-btn {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  padding: 0;
+  background: #6b4f4f;
+  color: white;
+  font-size: 16px;
+  line-height: 1;
+  z-index: 2;
+}
+
+.project-image {
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.counter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.counter span {
+  font-size: 32px;
+  font-weight: bold;
+  min-width: 50px;
+  text-align: center;
+}
+
+.add-row {
+  display: flex;
+  gap: 8px;
+}
+
+.add-row input {
+  margin-bottom: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: white;
+  border-radius: 12px;
+  padding: 10px;
+  margin-bottom: 8px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 10px;
+  align-items: center;
+}
+
+li.done span {
+  text-decoration: line-through;
+  opacity: 0.55;
+}
+
+#timerText {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.timer-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+#p5-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.app-logo {
+  width: 180px;
+  margin: 20px 0;
+  display: block;
+}
+
+#milestonesList {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.timer-visual-slot {
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timer-running-image {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+.timer-idle-text {
+  margin: 0;
+  max-width: 220px;
+  font-family: "Manrope";
+  font-weight: 500;
+  color: #705d5d;
+  line-height: 1.4;
+}
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+}
+
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(3px);
+}
+
+.timer-modal-card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 2;
+  width: min(280px, calc(100% - 40px));
+  margin: 90px auto 0;
+  padding: 24px;
+  border-radius: 24px;
+  background: #fffaf5;
+  text-align: left;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+#modalTimerText {
+  font-size: 42px;
+  font-weight: 700;
+  text-align: center;
+}
+
+#timer-p5-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+#projectImage {
+  width: 100%;
+  margin: 12px 0;
+  object-fit: cover;
+}
+
+.project-detail-image {
+  width: 100%;
+  max-width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 18px;
+  display: block;
+}
+
+.timer-running-image {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  display: block;
+  margin: 16px auto;
+}
