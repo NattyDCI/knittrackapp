@@ -75,11 +75,8 @@ h1 {
 
 .main-btn,
 button {
-  border: none;
-  border-radius: 10px;
+  
   padding: 10px 14px;
-  background: #705d5d;
-  color: white;
   font-weight: 600;
   font-family: "Manrope";
 }

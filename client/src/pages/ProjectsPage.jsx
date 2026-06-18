@@ -70,7 +70,7 @@ export default function ProjectsPage() {
                     event.stopPropagation();
                     deleteProject(project.id);
                   }}
-                  className="absolute top-2 right-2 z-10 w-7 h-7 rounded-full bg-[#6f5b5c] text-white"
+                  className="absolute rounded-full border-2 flex items-center justify-center right-2 z-10 w-9 cursor-pointer h-9 bg-[#6f5b5c] text-white font-light text-3xl"
                 >
                   ×
                 </button>
