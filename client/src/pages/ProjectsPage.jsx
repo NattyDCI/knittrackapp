@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { MainContext } from "../Context";
+import { soundUrlReset } from "../assets";
 
 function calculateProgress(project) {
   if (!project.milestones?.length) return 0;
@@ -15,7 +16,20 @@ function calculateProgress(project) {
 export default function ProjectsPage() {
   const navigate = useNavigate();
 
-  const { projects } = useContext(MainContext);
+  const { projects, setProjects } = useContext(MainContext);
+
+  function playSound(url) {
+  const audio = new Audio(url);
+  audio.currentTime = 0;
+  audio.volume = 1;
+  audio.play().catch((error) => console.log("Sound failed:", error));
+}
+
+
+    function deleteProject(projectId) {
+      playSound(soundUrlReset);
+      setProjects(projects.filter((project) => project.id !== projectId));
+    }
 
   return (
     <section id="projectsScreen" className="screen active">
@@ -49,6 +63,17 @@ export default function ProjectsPage() {
                 navigate(`/project/${project.id}`)
               }
             >
+
+                <button
+                  aria-label="Delete project"
+                  onClick={(event) => {
+                    event.stopPropagation();
+                    deleteProject(project.id);
+                  }}
+                  className="absolute top-2 right-2 z-10 w-7 h-7 rounded-full bg-[#6f5b5c] text-white"
+                >
+                  ×
+                </button>
               <img
                 src={project.image}
                 alt={project.name}

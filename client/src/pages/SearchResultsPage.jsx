@@ -38,7 +38,7 @@ export default function SearchResultsPage() {
   }, [query]);
 
   return (
-    <section className="search-page">
+    <section className="search-page bg-[#f4f1ee] px-6 flex-col items-center justify-center py-8 min-h-dvh overflow-y-auto pb-28"> 
       <nav className="breadcrumb">
         <Link to="/">Home</Link>
         <span>›</span>
@@ -53,11 +53,14 @@ export default function SearchResultsPage() {
 
       {loading && <p>Loading patterns...</p>}
 
-      <div className="ravelry-grid">
+      <div className="grid grid-cols-2 gap-4">
         {patterns.map((pattern) => (
           <article key={pattern.id} className="ravelry-card">
             {pattern.first_photo?.small_url && (
-              <img src={pattern.first_photo.small_url} alt={pattern.name} />
+              <img 
+                src={pattern.first_photo.small_url} 
+                alt={pattern.name} 
+                className="w-full h-48 object-cover rounded-xl"/>
             )}
 
             <div className="ravelry-card-content">
