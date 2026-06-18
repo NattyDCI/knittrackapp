@@ -1,0 +1,11 @@
+export { default as scarf } from "./images/scarf.jpg";
+export { default as default_yarn } from "./images/default_yarn.jpg";
+export { default as socksImg } from "./images/socks.jpg";
+export { default as running_sheep } from "./images/running_sheep.gif";
+export { default as sweaterImg } from "./images/sweater.jpg";
+export { default as shawlImg } from "./images/shawl.jpg";
+export { default as runningGif } from "./images/running_sheep.gif";
+export { default as logoImg } from "./images/knitTrack_logo.png";
+export { default as cheers_finished_sound } from "./sounds/cheers_finished_sound.mp3";
+export { default as counter_addordelete } from "./sounds/counter_addordelete.mp3";
+export { default as soundUrlReset } from "./sounds/reset_swoosh.mp3";

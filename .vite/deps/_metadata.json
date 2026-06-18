@@ -1,0 +1,52 @@
+{
+  "hash": "5dda16a7",
+  "configHash": "a90d0416",
+  "lockfileHash": "4e702428",
+  "browserHash": "0d14b71b",
+  "optimized": {
+    "@capacitor/haptics": {
+      "src": "../../node_modules/@capacitor/haptics/dist/esm/index.js",
+      "file": "@capacitor_haptics.js",
+      "fileHash": "ba98fd3d",
+      "needsInterop": false
+    },
+    "p5": {
+      "src": "../../node_modules/p5/dist/app.js",
+      "file": "p5.js",
+      "fileHash": "7fb9cea0",
+      "needsInterop": false
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "531d74f5",
+      "needsInterop": true
+    },
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "1f8559e3",
+      "needsInterop": true
+    },
+    "react/jsx-dev-runtime": {
+      "src": "../../node_modules/react/jsx-dev-runtime.js",
+      "file": "react_jsx-dev-runtime.js",
+      "fileHash": "25fef475",
+      "needsInterop": true
+    }
+  },
+  "chunks": {
+    "chunk-_TIqcEvS": {
+      "file": "chunk-_TIqcEvS.js",
+      "isDynamicEntry": false
+    },
+    "definitions-GzPlqrKH": {
+      "file": "definitions-GzPlqrKH.js",
+      "isDynamicEntry": false
+    },
+    "web-BkuOLQH-": {
+      "file": "web-BkuOLQH-.js",
+      "isDynamicEntry": true
+    }
+  }
+}
