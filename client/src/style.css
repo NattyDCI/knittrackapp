@@ -1,21 +1,18 @@
-
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #4B4444; /* Brown */
-  --color-secondary: #BDACB6; /* neutral brown */
-  --color-terciary: #DAD2D2; /* neutral brown lighter */
-  --color-light: #F3E8E8; /* neutral lighter almost white*/
-  --color-accentLight: #F0C5E0;  /* neutral accent pink light */
-  --color-accentPink: #F856B9;  /*  accent Hot pink */
-  --color-mainMauve: #c1a6a6;  /*  main Mauve */
+  --color-primary: #4b4444; /* Brown */
+  --color-secondary: #bdacb6; /* neutral brown */
+  --color-terciary: #dad2d2; /* neutral brown lighter */
+  --color-light: #f3e8e8; /* neutral lighter almost white*/
+  --color-accentLight: #f0c5e0; /* neutral accent pink light */
+  --color-accentPink: #f856b9; /*  accent Hot pink */
+  --color-mainMauve: #c1a6a6; /*  main Mauve */
 
   --app-width: min(100vw, 430px);
   --app-left: calc((100vw - var(--app-width)) / 2);
-  
 
   --font-manrope: "Manrope", sans-serif;
-
 }
 @font-face {
   font-family: "Orbitron";
@@ -43,7 +40,6 @@
   font-weight: 500;
 }
 
-
 html,
 body,
 #root {
@@ -53,7 +49,6 @@ body,
   overflow-y: scroll !important;
   font-family: "Manrope";
 }
-
 
 #app {
   width: var(--app-width);
@@ -65,14 +60,20 @@ body,
   overflow: hidden;
 }
 
-
+.ravelry-card {
+  min-height: fit-content;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 10px 30px;
+  background: var(--color-mainMauve);
+  border-radius: 10px;
+}
 
 .screen.active {
   display: block;
   min-height: 100dvh;
   overflow: visible;
 }
-
 
 .screen {
   display: none;
@@ -82,7 +83,7 @@ body,
 .screen.active {
   display: block;
   overflow-y: auto;
-} 
+}
 
 h1 {
   margin-bottom: 4px;
@@ -97,7 +98,6 @@ h1 {
 
 .main-btn,
 button {
-  
   padding: 10px 14px;
   font-weight: 600;
   font-family: "Manrope";
@@ -107,18 +107,19 @@ button {
   width: 100%;
   display: flex;
   justify-content: flex-end;
-  
-  
 }
 
 .back-btn {
   background: transparent;
   color: #222;
   margin-top: 30px;
-  font-size:30px;
+  font-size: 20px;
   cursor: pointer;
-  
- }
+}
+
+.back-btn:hover {
+  color: var(--color-mainMauve);
+}
 
 input {
   width: 100%;
@@ -128,9 +129,32 @@ input {
   border: 1px solid #ccc;
   margin-top: 5px;
   margin-bottom: 5px;
-} 
+}
 
+#projectTitle {
+  padding: 6px;
+}
 
+#decreaseRowBtn,
+#increaseRowBtn {
+  font-size: 30px;
+  background-color: var(--color-accentPink);
+  border-radius: 10px;
+  margin: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+  cursor: pointer;
+  padding-top: 0 !important;
+  height: 40px !important;
+  line-height: 3px;
+  padding-bottom: 0 !important;
+}
+
+.counter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 #projectsGrid {
   display: grid;
@@ -330,7 +354,7 @@ li.done span {
   z-index: 2;
   width: min(280px, calc(100% - 40px));
   margin: 90px auto 0;
-  padding: 24px;
+  padding: 14px;
   border-radius: 24px;
   background: #fffaf5;
   text-align: left;
@@ -370,4 +394,41 @@ li.done span {
   object-fit: contain;
   display: block;
   margin: 16px auto;
+}
+
+.celebration-sc {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  gap: 16px;
+}
+
+.celebration-canvas-wrapper {
+  width: 430px;
+  height: 320px;
+  overflow: hidden;
+}
+
+.p5-container {
+  width: 430px;
+  height: 320px;
+  overflow: hidden;
+}
+
+.p5-container canvas {
+  display: block;
+}
+
+.celebration-btn {
+  width: auto;
+  padding: 12px 30px;
+  background: var(--color-mainMauve);
+  border-radius: 20px;
+  color: var(--color-light);
+  font-size: 20px;
+  margin-top: 10px;
+  cursor: pointer;
 }

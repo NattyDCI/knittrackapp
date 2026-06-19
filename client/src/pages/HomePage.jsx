@@ -91,14 +91,14 @@ export default function Homepage() {
         <div className="flex justify-center gap-8 mb-10">
           <button
             onClick={() => navigate("/new-project")}
-            className="border-2 border-primary rounded-lg px-5 py-3 font-semibold"
+            className="border-2 border-primary rounded-lg px-5 py-3 font-semibold cursor-pointer"
           >
             + New Project
           </button>
 
           <button
             onClick={() => navigate("/projectspage")}
-            className="bg-primary text-white rounded-lg px-5 py-3 font-semibold"
+            className="bg-primary text-white rounded-lg px-5 py-3 font-semibold cursor-pointer"
           >
             Go to Projects
           </button>
@@ -113,7 +113,7 @@ export default function Homepage() {
             <button
               key={category.query}
               onClick={() => navigate(`/search/${category.query}`)}
-              className="bg-mainMauve rounded-lg overflow-hidden"
+              className="bg-mainMauve cursor-pointer rounded-lg overflow-hidden"
             >
               <img
                 src={category.image}

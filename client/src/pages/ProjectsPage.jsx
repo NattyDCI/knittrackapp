@@ -59,49 +59,39 @@ export default function ProjectsPage() {
           {projects.map((project) => (
             <article
               key={project.id}
-              className="project-card"
-              onClick={() =>
-                navigate(`/project/${project.id}`)
-              }
+              onClick={() => navigate(`/project/${project.id}`)}
+              className="relative p-2 bg-mainMauve rounded-lg overflow-hidden cursor-pointer"
             >
+              <button
+                aria-label="Delete project"
+                onClick={(event) => {
+                  event.stopPropagation();
+                  deleteProject(project.id);
+                }}
+                className="absolute p-6 top-2 right-2 z-10 w-7 h-8 rounded-full bg-[#6f5b5c] text-white font-light justify-center items-center flex border-2 text-2xl cursor-pointer"
+              >
+                ×
+              </button>
 
-                <button
-                  aria-label="Delete project"
-                  onClick={(event) => {
-                    event.stopPropagation();
-                    deleteProject(project.id);
-                  }}
-                  className="absolute rounded-full border-2 flex items-center justify-center right-2 z-10 w-9 cursor-pointer h-9 bg-[#6f5b5c] text-white font-light text-3xl"
-                >
-                  ×
-                </button>
               <img
                 src={project.image}
                 alt={project.name}
-                className="project-image"
+                className="w-full h-28 object-cover rounded-md"
               />
 
-              <div className="card-content">
-                <p className="project-name">
-                  {project.name}
-                </p>
+              <div className="p-2">
+                <p className="text-lg font-semibold text-primary uppercase">{project.name}</p>
 
-                <div className="stats-line">
-                  <p className="status-title">
-                    Status
-                  </p>
+                <div className="flex items-center justify-between">
+                  <p className="font-semibold text-light">Status</p>
 
-                  <div className="progress-pill">
+                  <div className="bg-accentLight font-semibold text-primary rounded-full px-3 py-2 text-sm">
                     {calculateProgress(project)}%
                   </div>
                 </div>
-
-                <p>
-                  Rows: {project.rows}
-                </p>
               </div>
-             
             </article>
+          
           ))}
             
         </div>

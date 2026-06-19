@@ -31,6 +31,8 @@ export default function SearchResultsPage() {
         setPatterns(data.patterns || []);
       } catch (error) {
         console.error("FETCH ERROR =", error);
+      } finally {
+        setLoading(false);
       }
     }
 
@@ -38,11 +40,13 @@ export default function SearchResultsPage() {
   }, [query]);
 
   return (
-    <section className="search-page bg-[#f4f1ee] px-6 flex-col items-center justify-center py-8 min-h-dvh overflow-y-auto pb-28"> 
-      <nav className="breadcrumb">
-        <Link to="/">Home</Link>
-        <span>›</span>
-        <span>Search: {query}</span>
+    <section className="search-page bg-[#f4f1ee] px-6 flex-col items-center justify-center py-8 min-h-dvh overflow-y-auto pb-28">
+      <nav className="breadcrumb pb-0">
+        <Link to="/" className="text-mainMauve">
+          Home
+        </Link>
+
+        <span className="font-bold"> › Search: {query}</span>
       </nav>
 
       <button className="back-btn" onClick={() => navigate("/")}>
@@ -55,19 +59,29 @@ export default function SearchResultsPage() {
 
       <div className="grid grid-cols-2 gap-4">
         {patterns.map((pattern) => (
-          <article key={pattern.id} className="ravelry-card">
+          <div
+            key={pattern.id}
+            className=" bg-mainMauve rounded-2xl pb-3 cursor-pointer"
+          >
             {pattern.first_photo?.small_url && (
-              <img 
-                src={pattern.first_photo.small_url} 
-                alt={pattern.name} 
-                className="w-full h-48 object-cover rounded-xl"/>
+              <img
+                src={pattern.first_photo.small_url}
+                alt={pattern.name}
+                className="w-full h-40 object-cover rounded-t-xl "
+              />
             )}
 
-            <div className="ravelry-card-content">
-              <h3>{pattern.name}</h3>
-              <p>{pattern.designer?.name}</p>
+            <div className="ravelry-card-content px-1 ">
+              <div className="flex justify-items-start px-2 leading-0">
+                <h3 className="font-bold text-xl mt-2 rounded-lg  text-accentLight">
+                  {pattern.name}
+                </h3>
+              </div>
+              <p className="px-2 text-primary font-bold">
+                {pattern.designer?.name}
+              </p>
             </div>
-          </article>
+          </div>
         ))}
       </div>
     </section>

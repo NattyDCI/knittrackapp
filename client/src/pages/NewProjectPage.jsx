@@ -1,8 +1,7 @@
 import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { VscBellDot } from "react-icons/vsc";
-import Navbar from "./components/Navbar.jsx"
-
+import Navbar from "./components/Navbar.jsx";
 
 import { MainContext } from "../Context";
 import {
@@ -30,7 +29,6 @@ function calculateProgress(project) {
 }
 
 export default function NewProjectPage() {
-
   const navigate = useNavigate();
 
   const { projects, setProjects } = useContext(MainContext);
@@ -64,7 +62,7 @@ export default function NewProjectPage() {
   }
 
   return (
-   <section className="relative bg-[#f4f1ee] justify-center py-8 min-h-dvh overflow-y-auto pb-28">
+    <section className="relative bg-[#f4f1ee] justify-center py-8 min-h-dvh overflow-y-auto pb-28">
       <div className="px-6 pt-8">
         <header className="flex items-start justify-between mb-8">
           <div>
@@ -89,9 +87,9 @@ export default function NewProjectPage() {
 
         <div className="flex items-center text-sm mb-8">
           <button className="cursor-pointer" onClick={() => navigate("/")}>
-            <p className="font-light text-secondary text-xl" >Home › </p>
-            </button>
-          
+            <p className="font-medium text-terciary text-xl">Home › </p>
+          </button>
+
           <span className="font-regular text-primary text-xl">Projects</span>
         </div>
 
@@ -103,21 +101,28 @@ export default function NewProjectPage() {
           value={newProjectName}
           onChange={(e) => setNewProjectName(e.target.value)}
           placeholder="Project Name..."
-          className="w-full bg-[#e8bfdc] border border-[#6f5b5c] rounded px-4 py-4 text-lg mb-3"
+          className="w-full bg-mainMauve border border-[#6f5b5c] rounded px-4 py-4 text-lg mb-6 placeholder-terciary"
         />
 
-        <div className="flex justify-end mb-10">
+        <div className="flex justify-end mt-4 mb-6">
           <button
             onClick={createProject}
-            className="border border-black rounded-lg px-4 py-3 font-semibold"
+            className="border bg-primary rounded-lg px-4 py-3 font-semibold text-light "
           >
             + New Project
           </button>
         </div>
 
         <div className="flex items-end justify-between mb-5">
-          <h2 className="text-2xl">What you have been working on...</h2>
-          <button className="text-sm">ALL WIPS →</button>
+          <h2 className="text-md leading-10">
+            What you have been working on...
+          </h2>
+          <button
+            onClick={() => navigate("/projectspage")}
+            className="text-sm cursor-pointer text-primary hover:text-mainMauve"
+          >
+            ALL WIPS →
+          </button>
         </div>
 
         <div className="grid grid-cols-2 gap-4">
@@ -125,7 +130,7 @@ export default function NewProjectPage() {
             <article
               key={project.id}
               onClick={() => navigate(`/project/${project.id}`)}
-              className="relative bg-[#d8cfcf] rounded-lg overflow-hidden cursor-pointer"
+              className="relative p-2 bg-mainMauve rounded-lg overflow-hidden cursor-pointer"
             >
               <button
                 aria-label="Delete project"
@@ -133,7 +138,7 @@ export default function NewProjectPage() {
                   event.stopPropagation();
                   deleteProject(project.id);
                 }}
-                className="absolute top-2 right-2 z-10 w-7 h-7 rounded-full bg-[#6f5b5c] text-white"
+                className="absolute p-6 top-2 right-2 z-10 w-7 h-8 rounded-full bg-[#6f5b5c] text-white font-light justify-center items-center flex border-2 text-2xl cursor-pointer"
               >
                 ×
               </button>
@@ -141,16 +146,18 @@ export default function NewProjectPage() {
               <img
                 src={project.image}
                 alt={project.name}
-                className="w-full h-28 object-cover"
+                className="w-full h-28 object-cover rounded-md"
               />
 
               <div className="p-2">
-                <p>{project.name}</p>
+                <p className="text-lg font-semibold text-primary uppercase">
+                  {project.name}
+                </p>
 
                 <div className="flex items-center justify-between">
-                  <p>Status</p>
+                  <p className="font-semibold text-light">Status</p>
 
-                  <div className="bg-[#7a5f62] text-white rounded-full px-3 py-2 text-sm">
+                  <div className="bg-accentLight font-semibold text-primary rounded-full px-3 py-2 text-sm">
                     {calculateProgress(project)}%
                   </div>
                 </div>
@@ -165,7 +172,7 @@ export default function NewProjectPage() {
           </p>
         )}
       </div>
-      <Navbar/>
+      <Navbar />
     </section>
   );
 }
