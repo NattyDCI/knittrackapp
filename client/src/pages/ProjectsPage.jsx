@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { MainContext } from "../Context";
 import { soundUrlReset } from "../assets";
 
+
 function calculateProgress(project) {
   if (!project.milestones?.length) return 0;
 
@@ -99,10 +100,13 @@ export default function ProjectsPage() {
                   Rows: {project.rows}
                 </p>
               </div>
+             
             </article>
           ))}
+            
         </div>
       )}
+    
     </section>
   );
 }

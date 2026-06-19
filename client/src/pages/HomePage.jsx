@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { VscBellDot } from "react-icons/vsc";
 import { IoMdSearch } from "react-icons/io";
 
+
 import {
   logoImg,
   socksImg,
@@ -10,6 +11,7 @@ import {
   sweaterImg,
   scarf,
 } from "../assets";
+import "../style.css";
 
 export default function Homepage() {
 
@@ -34,12 +36,13 @@ export default function Homepage() {
   }
 
   return (
-    <section className="bg-[#f4f1ee] px-6 justify-center py-8 min-h-dvh overflow-y-auto pb-28">
+    <section className="bg-[#f4f1ee] px-6 justify-center py-8 min-h-dvh pb-28">
+    
       
         <header className="flex items-start justify-between mb-8">
           <div>
             <img src={logoImg} alt="KnitTrack" className="w-32 mb-2" />
-            <p className="text-xl text-black font-light">Hello Joanna,</p>
+            <p className="text-xl text-blackfont-extrabold">Hello Joanna,</p>
           </div>
 
           <div className="flex gap-4">
@@ -47,7 +50,7 @@ export default function Homepage() {
               <VscBellDot color="white" />
             </button>
 
-            <div className="w-14 h-14 rounded-full bg-[#c0a7be] ">
+            <div className="w-14 h-14 rounded-full bg-mainMauve border-4 border-accentLight ">
               <img src={socksImg} alt="" className="w-full h-full rounded-full" />
              
             </div>
@@ -56,7 +59,7 @@ export default function Homepage() {
 
         <form
           onSubmit={handleSearch}
-          className="bg-[#bc9c9c] rounded-2xl justify-between pl-5 flex items-center"
+          className="bg-mainMauve rounded-2xl justify-between pl-5 flex items-center"
         >
           <span className="text-2xl mr-2 text-amber-50">☰</span>
 
@@ -88,14 +91,14 @@ export default function Homepage() {
         <div className="flex justify-center gap-8 mb-10">
           <button
             onClick={() => navigate("/new-project")}
-            className="border-2 border-black rounded-lg px-5 py-3 font-semibold"
+            className="border-2 border-primary rounded-lg px-5 py-3 font-semibold"
           >
             + New Project
           </button>
 
           <button
             onClick={() => navigate("/projectspage")}
-            className="bg-[#514c47] text-white rounded-lg px-5 py-3 font-semibold"
+            className="bg-primary text-white rounded-lg px-5 py-3 font-semibold"
           >
             Go to Projects
           </button>
@@ -110,7 +113,7 @@ export default function Homepage() {
             <button
               key={category.query}
               onClick={() => navigate(`/search/${category.query}`)}
-              className="bg-[#bc9c9c] rounded-lg overflow-hidden"
+              className="bg-mainMauve rounded-lg overflow-hidden"
             >
               <img
                 src={category.image}
@@ -118,13 +121,14 @@ export default function Homepage() {
                 className="w-full h-32 object-cover rounded-lg"
               />
 
-              <p className="py-3 text-base font-medium">
+              <p className="py-3 text-base text-light font-manrope font-semibold">
                 {category.name}
               </p>
             </button>
           ))}
+          
         </div>
-    
+   
     </section>
   );
 }

@@ -1,5 +1,22 @@
 
 @import "tailwindcss";
+
+@theme {
+  --color-primary: #4B4444; /* Brown */
+  --color-secondary: #BDACB6; /* neutral brown */
+  --color-terciary: #DAD2D2; /* neutral brown lighter */
+  --color-light: #F3E8E8; /* neutral lighter almost white*/
+  --color-accentLight: #F0C5E0;  /* neutral accent pink light */
+  --color-accentPink: #F856B9;  /*  accent Hot pink */
+  --color-mainMauve: #c1a6a6;  /*  main Mauve */
+
+  --app-width: min(100vw, 430px);
+  --app-left: calc((100vw - var(--app-width)) / 2);
+  
+
+  --font-manrope: "Manrope", sans-serif;
+
+}
 @font-face {
   font-family: "Orbitron";
   src: url("./assets/fonts/Orbitron-Regular.ttf");
@@ -26,6 +43,7 @@
   font-weight: 500;
 }
 
+
 html,
 body,
 #root {
@@ -33,16 +51,19 @@ body,
   min-height: 100dvh;
   overflow-x: hidden;
   overflow-y: scroll !important;
+  font-family: "Manrope";
 }
 
 
 #app {
-  
-  max-width:430px;
-  min-height: 400px;
-  margin: 0 auto;
-  padding: 0;
-  overflow: visible; }
+  width: var(--app-width);
+  max-width: 430px;
+  min-height: 100dvh;
+  /* margin: 0 auto; */
+  position: relative;
+  background: #f4f1ee;
+  overflow: hidden;
+}
 
 
 
@@ -55,6 +76,7 @@ body,
 
 .screen {
   display: none;
+  padding: 14px;
 }
 
 .screen.active {
@@ -108,17 +130,7 @@ input {
   margin-bottom: 5px;
 } 
 
-.pop{
-  background-color: RED;
-  color:red;
-  font-size: 30px;
-}
 
-.parapo{
-  background-color: RED;
-  font-size: 30px;
-  color: green;
-}
 
 #projectsGrid {
   display: grid;
