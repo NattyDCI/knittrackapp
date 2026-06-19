@@ -11,8 +11,6 @@ app.use(cors());
 const RAVELRY_USERNAME = process.env.RAVELRY_USERNAME;
 const RAVELRY_PASSWORD = process.env.RAVELRY_PASSWORD;
 
-console.log("RAVELRY_USERNAME:", RAVELRY_USERNAME);
-console.log("RAVELRY_PASSWORD EXISTS:", Boolean(RAVELRY_PASSWORD));
 
 const authHeader =
   "Basic " +
@@ -35,8 +33,6 @@ app.get("/api/ravelry/patterns", async (req, res) => {
 
     const text = await response.text();
 
-    console.log("RAVELRY STATUS:", response.status);
-    console.log("RAVELRY RESPONSE:", text);
 
     if (!response.ok) {
       return res.status(response.status).send(text);
